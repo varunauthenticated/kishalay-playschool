@@ -1,0 +1,26 @@
+.tabing {
+  background-image: url("../../assets/img/img12.jpg");
+}
+.para {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: justify;
+}
+.imgcls {
+  max-height: 350px;
+}
+
+@media only screen and (max-width: 600px){
+  .para{
+    font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+.imgcls {
+  max-height: 150px;
+}
+  }
+
+  .hdr {
+    background-color: #f2f7b9;
+  }

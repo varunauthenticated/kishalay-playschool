@@ -1,0 +1,69 @@
+<mat-nav-list>
+    <div mat-list-item href="#">
+        <span class="nav-caption"></span>
+    </div>
+    <a mat-list-item (click)="openDialog()">
+      <img src="../../../assets/anual/13.JPG" alt="img" height="100px" width="80px" style="border-radius: 50%;">
+      <span class="nav-caption">From The principal's desk</span>
+    </a>
+    <div mat-list-item href="#">
+      <span class="nav-caption"></span>
+    </div>
+
+    <a mat-list-item routerLink="/" (click)="onClose()">
+      <mat-icon>home</mat-icon>
+      <span class="nav-caption">Home</span>
+    </a>
+    <a mat-list-item [matMenuTriggerFor]="abt">
+        <mat-icon>receipt</mat-icon>
+        <span class="nav-caption">About Us</span>
+        <mat-icon>expand_more</mat-icon>
+      </a>
+      <mat-menu #abt="matMenu">
+        <a mat-menu-item routerLink="/about" (click)="onClose()">Our Philosophy</a>
+      </mat-menu>
+
+    <a mat-list-item [matMenuTriggerFor]="galery">
+      <mat-icon>theaters</mat-icon>
+      <span class="nav-caption">Gallery</span>
+      <mat-icon>expand_more</mat-icon>
+    </a>
+    <mat-menu #galery="matMenu">
+      <a mat-menu-item routerLink="/gallery" (click)="onClose()">Snap Shots</a>
+      <a mat-menu-item routerLink="/anual" (click)="onClose()">Annual Programme</a>
+      <a mat-menu-item routerLink="/winter" (click)="onClose()">Winter Carnival</a>
+      <a mat-menu-item routerLink="/summer" (click)="onClose()">Summer Camp</a>
+  </mat-menu>
+
+    <a mat-list-item routerLink="curiculum" (click)="onClose()">
+      <mat-icon>local_library</mat-icon>
+      <span class="nav-caption">Curriculum</span>
+    </a>
+
+    <a mat-list-item routerLink="/infra" (click)="onClose()">
+      <mat-icon> monetization_on</mat-icon>
+      <span class="nav-caption">Facilities</span>
+    </a>
+    <a mat-list-item routerLink="/parent" (click)="onClose()">
+      <mat-icon>extension</mat-icon>
+      <span class="nav-caption">Parents Corner</span>
+    </a>
+    <a mat-list-item routerLink="/news" (click)="onClose()">
+      <mat-icon>forum</mat-icon>
+      <span class="nav-caption">News/Notification</span>
+    </a>
+
+    <a mat-list-item routerLink="/reg" (click)="onClose()">
+      <mat-icon>note</mat-icon>
+      <span class="nav-caption">Admission</span>
+    </a>
+
+    <a *ngIf="!service.valid" mat-list-item routerLink="/login" (click)="onClose()">
+      <mat-icon>keyboard_tab</mat-icon>
+      <span class="nav-caption">Login</span>
+    </a>
+    <a mat-list-item *ngIf="service.valid" (click)="onLogout()">
+        <mat-icon>eject</mat-icon>
+        <span class="nav-caption">Logout</span>
+    </a>
+  </mat-nav-list>

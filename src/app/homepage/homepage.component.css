@@ -1,0 +1,38 @@
+.hdr {
+  /* background-image: url("../../assets/img/img11.jpg"); */
+  background-color: #f2f7b9;
+}
+
+.imgsld {
+  height: 200px;
+  width: 90%;
+}
+.crsl {
+  min-height: 450px;
+  max-height: 450px;
+  margin-left: 5%;
+  min-width: 90%;
+  max-width: 90%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .crsl{
+    min-height: 250px;
+    max-height: 250px;
+    width: 100%;
+  }
+  .imgsld{
+    height: 100px;
+    width: 95%;
+  }
+}
+
+.submenu a{
+  color: coral;
+}
+.submenu a:hover{
+  background-color: cadetblue;
+  color: white;
+}
+

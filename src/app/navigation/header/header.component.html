@@ -1,0 +1,73 @@
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon style="color: green;">menu</mat-icon>
+    </button>
+  </div>
+
+  <div fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+   <img src="../../../assets/img/logo2.png" alt="logo" width="140px" height="140px" fxHide.xs>
+   <img src="../../../assets/img/logo2.png" alt="logo" width="90px" height="90px" fxHide.gt-xs>
+
+   <span style="color: green; text-align: center; font-size: 30px;font-weight: 800; font-family: Broadway;" fxHide.xs>KISHALAY &nbsp;PLAY &nbsp;SCHOOL<br><span style="color: red; font-family: Viner Hand ITC;font-weight: 700; font-size: 20px;text-align: center;">NURTURING &nbsp;TENDER&nbsp; MINDS</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="../../../assets/img/im4.jpg" alt="image" height="130px" width="120px" fxHide.xs>
+   <img src="../../../assets/img/im1.jpg" alt="image" height="130px" width="120px" fxHide.xs>
+   <img src="../../../assets/img/im2.jpg" alt="image" height="130px" width="130px" fxHide.lt-lg>
+   <img src="../../../assets/img/img2.jpg" alt="image" height="130px" width="130px" fxHide.lt-lg>
+   <a (click)="openDialog()" style="cursor: pointer;" fxLayout="column" fxLayoutAlign="center center" fxHide.xs>
+     <img src="../../../assets/anual/13.JPG" height="110px" width="100px" alt="principal" style="border-radius: 50%;">
+     <span style="color: red;text-align: center;">Principal's Desk</span>
+   </a>
+   <span style="color: green; font-size: 20px; font-family: Broadway; font-weight: 700;" fxHide.gt-xs>KISHALAY PLAY <br> SCHOOL <br> <span style="color: red; font-family: Viner Hand ITC; font-size: 15px;text-align: center;">NURTURING TENDER<br>MINDS</span> </span>
+  </div>
+
+
+</mat-toolbar>
+
+<div fxHide.xs>
+  <div class="topmenu" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center" style="background-color: green; margin-top: 0px; height: 25px; width: 100%;">
+    <a mat-button routerLink="/">Home</a>
+    <a mat-button [matMenuTriggerFor]="abt">About Us<mat-icon>expand_more</mat-icon></a>
+    <a mat-button [matMenuTriggerFor]="galery">Gallery<mat-icon>expand_more</mat-icon></a>
+
+
+    <a mat-button routerLink="/curiculum">Curriculum</a>
+
+
+    <a mat-button routerLink="/infra">Facilities</a>
+    <a mat-button routerLink="/parent">Parent's Corner</a>
+    <a mat-button routerLink="/news">News</a>
+    <a mat-button routerLink="/reg">Admission</a>
+    <a *ngIf="!service.valid" mat-button  routerLink="/login">Login</a>
+    <a *ngIf="service.valid" mat-button  routerLink="/" (click)="checkout()">Logout</a>
+
+
+    <mat-menu #galery="matMenu">
+      <a mat-menu-item routerLink="/gallery">Snap Shots</a>
+      <a mat-menu-item routerLink="/anual">Annual Programme</a>
+      <a mat-menu-item routerLink="/winter">Winter Carnival</a>
+      <a mat-menu-item routerLink="/summer">Summer Camp</a>
+  </mat-menu>
+  <mat-menu #abt="matMenu">
+    <a mat-menu-item routerLink="/about">Our Philosophy</a>
+</mat-menu>
+  </div>
+  </div>
+
+  <!--Scroll News Section Start-->
+  <div fxHide.xs>
+      <div class="container-fluid" style="background-color: orange; margin-top: 0px; height: 25px; width: 100%;">
+        <div class="row">
+            <div class="col-12">
+                <marquee onmouseover="this.stop()" onmouseout="this.start()" scrolldelay="200">
+                   <div fxLayout fxLayoutGap="30px">
+                    <a routerLink="/news"><p style="color: #660b0b; cursor: pointer;" ><span class="badge badge-secondary badge-danger blinking">New</span> Admission Open for Play Group, Nursery, LKG and UKG</p></a>
+                    <a routerLink="/news"><p style="color: #660b0b; cursor: pointer;" ><span class="badge badge-secondary badge-danger blinking">New</span> Admission Open for  Play Group, Nursery, LKG and UKG</p></a>
+                    <a routerLink="/news"><p style="color: #660b0b; cursor: pointer;"><span class="badge badge-secondary badge-danger blinking">New</span> Admission Open for  Play Group, Nursery, LKG and UKG</p></a>
+                   </div>
+                  </marquee>
+            </div>
+        </div>
+
+      </div>
+      </div>

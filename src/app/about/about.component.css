@@ -1,0 +1,24 @@
+.design {
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+  background-color: green;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  padding-left: 15%;
+  padding-right: 10%;
+}
+
+@media only screen and (max-width: 700px) {
+  .design {
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 15%;
+    padding-right: 10%;
+  }
+}
+.hdr {
+  background-color: #f2f7b9;
+}

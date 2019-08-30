@@ -1,0 +1,25 @@
+h3{
+  color: green;
+  text-align: center;
+}
+table.table-hover tbody tr:hover {
+  cursor: pointer;
+}
+input.ng-touched.ng-invalid{
+  border-color: red;
+}
+.validation-error{
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+.table-list {
+  max-height: 700px;
+  overflow: auto;
+  min-width: 300px;
+}
+
+.hdr {
+  background-color: #f2f7b9;
+}

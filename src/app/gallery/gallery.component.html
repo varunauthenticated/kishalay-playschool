@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h3 style="color: green; text-align: center;"><u>Snap Shots</u></h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let imgpth of imglnk" class="col-lg-3 col-md-3 col-sm-4 col-6">
+      <a href="{{ imgpth.imgpath }}" target="_blank">
+        <mat-spinner [hidden]="!imgpth.progress" diameter="50" class="spinr"></mat-spinner>
+        <img src="{{ imgpth.imgpath }}" [hidden]="imgpth.progress" (load)="imgpth.progress = false;" alt="image">
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <app-footer-area></app-footer-area>
+    </div>
+  </div>
+</div>

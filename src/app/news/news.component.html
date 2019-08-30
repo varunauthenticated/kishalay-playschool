@@ -1,0 +1,102 @@
+<div class="hdr">
+
+  <!--Data Entry area-->
+<section *ngIf="service.valid" class="dataentry">
+    <div class="container">
+    <div class="row">
+      <!--Form start-->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h3>News Detail</h3>
+
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+            <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+            <div class="form-group">
+              <input name="topic" #topic="ngModel" [(ngModel)]="service.formData.topic" class="form-control"
+                placeholder="News Title" required>
+              <div *ngIf="topic.invalid && topic.touched" class="validation-error">This field is required</div>
+            </div>
+            <div class="form-group">
+              <input name="date" #date="ngModel" [(ngModel)]="service.formData.date" class="form-control"
+                placeholder="Published Date" required>
+              <div *ngIf="date.invalid && date.touched" class="validation-error">This field is required</div>
+            </div>
+
+           <div class="form-group">
+                  <textarea name="desc" #desc="ngModel" [(ngModel)]="service.formData.desc" class="form-control" placeholder="News Description" required></textarea>
+                  <div *ngIf="desc.invalid && desc.touched" class="validation-error">This field is required</div>
+           </div>
+
+            <div class="form-group">
+              <button *ngIf="service.valid" [disabled]="form.invalid" type="submit" class="btn btn-lg btn-block btn-info">Submit</button>
+            </div>
+
+          </form>
+      </div>
+      <!--Form end-->
+
+      <!--table start-->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h3>News List</h3>
+
+        <div class="table-responsive table-list">
+            <table class="table table-hover table-condensed">
+              <thead>
+                <tr>
+                  <th>Sl. No.</th>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let news of newsList; let i = index">
+                  <td (click)="onEdit(news)">{{ i+1 }}</td>
+                  <td (click)="onEdit(news)">{{ news.topic }}</td>
+                  <td (click)="onEdit(newss)">{{ news.date }}</td>
+                  <td (click)="onEdit(news)">{{ news.desc }}</td>
+                  <td *ngIf="service.valid"><a class="btn text-danger" (click)="onDelete(news.id)"><i class="fa fa-trash"></i></a></td>
+                </tr>
+              </tbody>
+            </table><br>
+          </div>
+
+
+      </div>
+      <!--Table end-->
+    </div>
+  </div>
+    </section>
+  <!--Data Entry area end-->
+
+  <div class="row">
+    <div class="col-12 col-sm-12 offset-sm-2 col-md-8 col-lg-8 col-xl-8 offset-md-2 offset-lg-2 offset-xl-2">
+      <h4 style="text-align: center; color: green;">News And Upcoming Events</h4><hr>
+        <mat-accordion *ngFor="let news of newsList">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{ news.topic }}
+                </mat-panel-title>
+                <div class="float-right">
+                <mat-panel-description>
+                 {{news.date}}
+                </mat-panel-description>
+              </div>
+              </mat-expansion-panel-header>
+          <p>{{news.desc}}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <hr><br>
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <app-footer-area></app-footer-area>
+      </div>
+    </div>
+  </div>
